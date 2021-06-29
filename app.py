@@ -6,7 +6,7 @@ import model as m
 
 
 app = Flask(__name__)
-result = m.training()
+result = pickle.load(open('result.pkl','rb'))
 
 @app.route('/')
 def home():
