@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html >
-<!--From https://codepen.io/frytyler/pen/EGdtg-->
 <head>
   <meta charset="UTF-8">
   <title>ML API</title>
@@ -12,20 +11,28 @@
 </head>
 
 <body>
- <div class="login">
-	<h1>Predict Consumption</h1>
+ <div class="login" align='center'>
+	<h1 align='center'>Predict Consumption</h1>
+  <br>
+  <br>
+  <br>
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="experience" placeholder="date" required="required" />
+    	<input type="text" name="date_initial" placeholder="YYYY-MM-DD" required="required" />
+      <input type="text" name="date_final" placeholder="YYYY-MM-DD" required="required" />
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
 
    <br>
    <br>
-   {{ prediction_text }}
-
- </div>
+   <p>{{ prediction_text }}</p>
+   <br>
+  </div>
+   <div align='center'>
+    <img src = "{{ url_for('static',filename='plot.png')}}" />
+  </div>
+ 
 
 
 </body>
