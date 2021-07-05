@@ -1,0 +1,19 @@
+.body {
+    font-family: 'Open Sans';font-size: 18px;
+    font-weight: bolder;
+    background-color: "#ffffff";
+}
+.table {
+    border-spacing: 0;
+    background-color: #f5f5f5;
+}
+.table__row:nth-child(even) {
+background-color: #e5e5e5;
+}
+.table__header {
+    text-align: left;
+    font-weight: bolder;
+}
+.table__cell {
+    padding : 10px;
+}
