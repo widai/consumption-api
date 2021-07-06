@@ -12,24 +12,28 @@
 </head>
 
 <body class="body">
-  <div></div>
-  <img src='static/aviconn.png' align="left" width="45" height="45"/>
-  <img src='static/widai.png' align="right" width="100" height="50"/>
+  <div style="margin-left: 1.5% ;">
+  <img src='/static/aviconn.png' align="left" width="45" height="45" />
   </div>
   <br>
   <br>
   <br>
  <div class="login" align='center'>
-	<h1 align='center' style="color:rgb(0, 0, 0);">Unit Consumption Forecast</h1>
+	<h1 align='center' style="color:rgb(0, 0, 0);">UNIT CONSUMPTION<br>FORECAST</h1>
   
   <br>
-  <p style="color:rgb(0, 0, 0);">Enter the range of dates below to predict the unit monthly consumption</p>
+  <p style="color:rgb(13, 185, 197);">Enter the range of dates below to predict the unit monthly consumption</p>
+  <br>
+  <br>
 
      <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="date_initial" placeholder="YYYY-MM-DD" required="required" />
-      <input type="text" name="date_final" placeholder="YYYY-MM-DD" required="required" />
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    <form action="{{ url_for('predict')}}"method="post" style="font-size:medium; word-spacing: 1.5pt;">
+      <label for="start">Start Date:</label>
+    	<input type="text" name="date_initial" placeholder="YYYY-MM-DD" required="required" id="start"/><br><br>
+      <label for="end">End Date:</label>
+      <input type="text" name="date_final" placeholder="YYYY-MM-DD" required="required" id="end" /><br>
+      <br>
+        <button type="submit" class="btn btn-primary btn-block btn-large";">Predict</button>
     </form>
 
    <br>
@@ -41,7 +45,7 @@
     <img src = "{{ url_for('static',filename='plot.png')}}"/>
     <br>
     <br>
-    <p style="color: rgb(123, 7, 255);" align="center">{{ prediction_text }}</p>
+    <p style="color: rgb(13, 185, 197);">{{ prediction_text }}</p>
     <br>
     <table class="table" align="center">
       <tr class="table__header">
@@ -61,8 +65,8 @@
     </table>
     <br>
   </div>
- 
-
-
+  <div style="background-color: rgb(255, 255, 255);" align="center">
+    <img src='/static/widai.png' width="200" height="100"/>
+  </div>
 </body>
 </html>

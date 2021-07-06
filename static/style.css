@@ -1,7 +1,10 @@
 .body {
     font-family: 'Open Sans';font-size: 18px;
     font-weight: bolder;
-    background-color: "#ffffff";
+    background-color: rgb(179, 179, 179,0.2);
+    margin-block-end: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
 }
 .table {
     border-spacing: 0;
