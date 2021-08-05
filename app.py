@@ -20,7 +20,7 @@ def predict():
     '''    
     date_initial = request.form['date_initial']
     date_final = request.form['date_final']
-    prediction = result.predict(start=date_initial,end=date_final)      
+    prediction = result.predict(start=date_initial,end=date_final,result.params)      
     #prediction = np.expm1(prediction)
     prediction = round(prediction,3)
 
