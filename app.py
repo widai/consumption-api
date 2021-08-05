@@ -4,7 +4,6 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 import matplotlib.pyplot as plt
 import os
-
 plt.style.use('seaborn-bright')
 
 app = Flask(__name__)
@@ -19,11 +18,10 @@ def predict():
     '''
     For rendering results on HTML GUI
     '''    
-    
     date_initial = request.form['date_initial']
     date_final = request.form['date_final']
     prediction = result.predict(start=date_initial,end=date_final)      
-    prediction = np.expm1(prediction)
+    #prediction = np.expm1(prediction)
     prediction = round(prediction,3)
 
     monthly = prediction.resample('m').sum()
@@ -50,4 +48,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(debug=False) 
+    app.run(debug=True) 
